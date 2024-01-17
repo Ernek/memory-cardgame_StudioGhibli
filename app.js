@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
   const cards = document.querySelectorAll(".game-card");
+  // const images = document.querySelectorAll(".img");
   let numCards = cards.length;
   let card1 = null;
   let card2 = null;
   let cardsFlipped = 0;
-  let currentScore = 0;
+  // let currentScore = 0;
   let lowScore = localStorage.getItem("low-score");
   let start = document.getElementById("start");
 
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   for (let card of cards) {
     card.addEventListener("click", handleCardClick);
+    // card.addEventListener("click", handleCardClick);
   }
 
   let startBtn = document.getElementById("start-button");
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (!card1 || !card2) {
       if (!currentCard.classList.contains("flipped")) {
-        setScore(currentScore + 1);
+        // setScore(currentScore + 1);
       }
       currentCard.classList.add("flipped");
       card1 = card1 || currentCard;
@@ -53,11 +55,11 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
 
-    if (cardsFlipped === numCards) endGame();
+    // if (cardsFlipped === numCards) endGame();
   }
 
   function startGame() {
-    setScore(0);
+    // setScore(0);
     start.classList.add("playing");
     let indices = [];
     // Create half the indices
